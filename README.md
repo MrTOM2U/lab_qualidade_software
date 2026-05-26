@@ -1,19 +1,46 @@
-# Laboratório de QA - Testes de Pontuação
+# Laboratório de Qualidade e Teste de Software
 
-Este projeto implementa um sistema de cálculo de pontuação com bônus, desenvolvido sob a metodologia TDD (Test-Driven Development) utilizando o framework Pytest.
+Este projeto implementa uma calculadora com foco na aplicação de testes automatizados e práticas de TDD (Test-Driven Development), utilizando a biblioteca Pytest. 
 
-## Estrutura de Diretórios
-- `src/`: Lógica de negócio (`pontuacao.py`).
-- `tests/`: Scripts de automação de testes (`test_pontuacao.py`).
+## Estrutura do Projeto
 
-## Cobertura e Casos de Teste (STLC)
-- **Partição de Equivalência**: Validação de pontuações normais e pontuações que ativam o bônus de 10%.
-- **Análise de Valor Limite**: Teste no ponto exato de inflexão da regra (100 pontos).
-- **Robustez (Tratamento de Exceções)**: Bloqueio de entradas inválidas, como pontuações negativas.
-- **Elemento Neutro**: Comportamento do sistema ao receber a pontuação 0.
+A separação de pastas segue o padrão de mercado para facilitar a manutenção e automação:
+* `src/`: Contém o código-fonte e a lógica de negócio da aplicação (`calculadora.py`).
+* `tests/`: Diretório exclusivo para os scripts de Quality Assurance (QA) (`test_calculadora.py`).
 
-## Execução
-1. Crie o ambiente virtual: `python3 -m venv venv`
-2. Ative-o: `source venv/bin/activate`
-3. Instale as dependências: `pip install -r requirements.txt`
-4. Execute os testes: `pytest -v`
+## Cobertura de Testes
+
+Foram aplicados os seguintes conceitos de QA:
+* **Partição de Equivalência**: Testes com valores dentro e acima do limite de desconto.
+* **Análise de Valor Limite (Boundary Value)**: Teste focado no extremo da regra (exatamente 100).
+* **Teste de Robustez**: Tratamento de exceções para valores inválidos (negativos).
+* **Elemento Neutro**: Verificação do processamento do valor zero.
+
+## Como Instalar e Executar
+
+1.  **Clone o repositório:**
+    ```bash
+    git clone [https://github.com/MrTOM2U/lab_qualidade_software.git](https://github.com/MrTOM2U/lab_qualidade_software.git)
+    cd lab_qualidade_software
+    ```
+
+2.  **Crie e ative o ambiente virtual:**
+    ```bash
+    python3 -m venv venv
+    source venv/bin/activate
+    ```
+
+3.  **Instale as dependências:**
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+4.  **Execute os testes:**
+    Para rodar todos os testes e verificar as asserções:
+    ```bash
+    pytest
+    ```
+    Para uma visualização mais detalhada:
+    ```bash
+    pytest -v
+    ```
